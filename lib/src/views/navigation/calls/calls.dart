@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:whatsapp/src/utils/style/images/images.dart';
 import 'package:whatsapp/src/views/navigation/calls/calls_viewmodel.dart';
 import 'package:whatsapp/src/reuseable_widget/text/text.dart';
 import 'package:whatsapp/src/utils/style/color/colors.dart';
@@ -51,21 +52,21 @@ class Calls extends StatelessWidget {
                 callsTile(
                   title: 'Bilal',
                   subtitle: 'Today,4:30 PM',
-                  url: "assets/images/bilalimage.png",
+                  url: AppImages.bilal,
                   icon: Icons.call,
                   icon2: Icons.south_west,
                 ),
                 callsTile(
                   title: 'Humaiyon',
                   subtitle: 'Today,4:35 PM',
-                  url: "assets/images/Humaiyon.png",
+                  url: AppImages.humaiyon,
                   icon: Icons.call,
                   icon2: Icons.south_west,
                 ),
                 callsTile(
                   title: 'Areeb',
                   subtitle: 'Today,4:40 PM',
-                  url: "assets/images/areeb.png",
+                  url: AppImages.areeb,
                   icon: Icons.call,
                   icon2: Icons.south_west,
                 ),

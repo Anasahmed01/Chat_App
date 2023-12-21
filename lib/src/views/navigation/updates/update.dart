@@ -3,6 +3,7 @@ import 'package:stacked/stacked.dart';
 import 'package:whatsapp/src/views/navigation/calls/calls_viewmodel.dart';
 import 'package:whatsapp/src/reuseable_widget/text/text.dart';
 import '../../../utils/style/color/colors.dart';
+import '../../../utils/style/images/images.dart';
 import '../calls/widget/widget.dart';
 import 'widget/widget.dart';
 
@@ -46,7 +47,7 @@ class Updates extends StatelessWidget {
                   textColor: AppColors.whiteColor,
                   leading: CircleAvatar(
                     radius: 25.0,
-                    backgroundImage: const AssetImage("assets/images/anas.png"),
+                    backgroundImage: AssetImage(AppImages.anas),
                     child: Stack(
                       children: [
                         Positioned(

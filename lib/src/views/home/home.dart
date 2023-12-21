@@ -15,10 +15,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) => DefaultTabController(
         length: 3,
         child: Scaffold(
-          backgroundColor: AppColors.backgroundColor,
           appBar: AppBar(
-            elevation: 0,
-            backgroundColor: AppColors.appbarColor,
             title: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [

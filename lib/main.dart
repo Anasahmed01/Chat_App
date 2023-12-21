@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:stacked_services/stacked_services.dart';
+import 'package:whatsapp/src/utils/style/color/colors.dart';
 import 'src/app/app.locator.dart';
 import 'src/app/app.router.dart';
 
@@ -20,6 +21,16 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData(
+          floatingActionButtonTheme: FloatingActionButtonThemeData(
+              foregroundColor: AppColors.whiteColor),
+          iconTheme: IconThemeData(color: AppColors.whiteColor),
+          scaffoldBackgroundColor: AppColors.backgroundColor,
+          appBarTheme: AppBarTheme(
+            actionsIconTheme: IconThemeData(color: AppColors.whiteColor),
+            elevation: 0,
+            backgroundColor: AppColors.appbarColor,
+          )),
       debugShowCheckedModeBanner: false,
       navigatorKey: StackedService.navigatorKey,
       onGenerateRoute: StackedRouter().onGenerateRoute,

@@ -19,11 +19,16 @@ class ChatsSection extends StatelessWidget {
             backgroundColor: AppColors.backgroundColor,
             body: Column(
               children: [
-                listTile(
-                    title: 'Bilal',
-                    subtitle: 'Kahan ho ajao aj class hai',
-                    url: AppImages.bilal,
-                    time: '7:00 PM'),
+                InkWell(
+                  onTap: () {
+                    viewModel.navigateToHomeView();
+                  },
+                  child: listTile(
+                      title: 'Bilal',
+                      subtitle: 'Kahan ho ajao aj class hai',
+                      url: AppImages.bilal,
+                      time: '7:00 PM'),
+                ),
                 listTile(
                     title: 'Anas',
                     subtitle: 'Han jani',

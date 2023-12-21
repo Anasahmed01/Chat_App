@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:stacked/stacked.dart';
+import 'package:whatsapp/src/utils/style/images/images.dart';
 import 'package:whatsapp/src/views/basic/splash/splash_viewmodel.dart';
 import 'package:whatsapp/src/utils/style/color/colors.dart';
 
@@ -23,7 +24,7 @@ class Splash extends StatelessWidget {
                 width: 100,
                 child: Center(
                   child: Image(
-                    image: AssetImage("assets/images/w.png"),
+                    image: AssetImage(AppImages.whatsAppLogo),
                   ),
                 ),
               ),
