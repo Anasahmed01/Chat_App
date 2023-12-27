@@ -1,11 +1,15 @@
 // ignore_for_file: prefer_const_constructors, avoid_print
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:pinput/pinput.dart';
 import 'package:stacked/stacked.dart';
 import 'package:whatsapp/src/utils/style/color/colors.dart';
 import 'package:whatsapp/src/utils/style/images/images.dart';
+import 'package:whatsapp/src/views/auth/login_with_number.dart';
 import 'package:whatsapp/src/views/auth/verification/verification_viewmodel.dart';
+
+import '../../../services/snackbar_services.dart';
 
 class Verification extends StatelessWidget {
   const Verification({super.key});
@@ -65,7 +69,9 @@ class Verification extends StatelessWidget {
                     Pinput(
                       length: 6,
                       showCursor: true,
-                      onCompleted: (pin) => print(pin),
+                      onChanged: (value) {
+                        viewmodel.code = value;
+                      },
                     ),
                     SizedBox(
                       height: 20,
@@ -79,7 +85,22 @@ class Verification extends StatelessWidget {
                               backgroundColor: Colors.green.shade600,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10))),
-                          onPressed: () {},
+                          onPressed: () async {
+                            try {
+                              PhoneAuthCredential credential =
+                                  PhoneAuthProvider.credential(
+                                      verificationId: LoginWithNumber.verifyId,
+                                      smsCode: viewmodel.code);
+                              await FirebaseAuth.instance
+                                  .signInWithCredential(credential);
+                              viewmodel.navigateToHomeView();
+                              ShowSnackBarService.showSnackbar(
+                                  '', 'Login successful!');
+                            } catch (e) {
+                              ShowSnackBarService.showSnackbar(
+                                  '', 'Invalid OTP!');
+                            }
+                          },
                           child: Text("Verify Phone Number")),
                     ),
                     Row(

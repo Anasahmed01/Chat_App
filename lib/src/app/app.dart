@@ -4,6 +4,7 @@ import 'package:whatsapp/src/views/home/home.dart';
 import 'package:whatsapp/src/views/navigation/calls/calls.dart';
 import 'package:whatsapp/src/views/navigation/chat_section/chats_section.dart';
 import 'package:whatsapp/src/views/navigation/updates/update.dart';
+import '../services/auth_services.dart';
 import '../views/basic/splash/splash.dart';
 
 @StackedApp(
@@ -18,6 +19,7 @@ import '../views/basic/splash/splash.dart';
   dependencies: [
     //Main
     Singleton(classType: NavigationService),
+    Singleton(classType: AuthServices),
     LazySingleton(classType: SnackbarService),
     LazySingleton(classType: DialogService),
   ],

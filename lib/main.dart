@@ -3,12 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:stacked_services/stacked_services.dart';
 import 'package:whatsapp/src/utils/style/color/colors.dart';
+import 'firebase_options.dart';
 import 'src/app/app.locator.dart';
 import 'src/app/app.router.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   await setupLocator();
 
   await SystemChrome.setPreferredOrientations(

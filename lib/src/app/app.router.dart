@@ -12,7 +12,8 @@ import 'package:stacked_services/stacked_services.dart' as _i8;
 import 'package:whatsapp/src/views/basic/splash/splash.dart' as _i2;
 import 'package:whatsapp/src/views/home/home.dart' as _i3;
 import 'package:whatsapp/src/views/navigation/calls/calls.dart' as _i6;
-import 'package:whatsapp/src/views/navigation/chat_section/chats_section.dart' as _i4;
+import 'package:whatsapp/src/views/navigation/chat_section/chats_section.dart'
+    as _i4;
 import 'package:whatsapp/src/views/navigation/updates/update.dart' as _i5;
 
 class Routes {

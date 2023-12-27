@@ -1,5 +1,6 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_typing_uninitialized_variables
 
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:intl_phone_field/intl_phone_field.dart';
@@ -11,7 +12,7 @@ import 'login_with_number_viewmodel.dart';
 
 class LoginWithNumber extends StatelessWidget {
   const LoginWithNumber({super.key});
-
+  static String verifyId = '';
   @override
   Widget build(BuildContext context) {
     return ViewModelBuilder.reactive(
@@ -92,7 +93,7 @@ class LoginWithNumber extends StatelessWidget {
                         viewmodel.phoneController = phoneNumber!.completeNumber;
                         print(phoneNumber);
                       },
-                      initialCountryCode: 'pk',
+                      initialCountryCode: 'PK',
                       style: TextStyle(color: AppColors.whiteColor),
                     ),
                     SizedBox(
@@ -109,14 +110,26 @@ class LoginWithNumber extends StatelessWidget {
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
-                        onPressed: () {
-                          viewmodel.navigateToVerificationView();
+                        onPressed: () async {
+                          await FirebaseAuth.instance.verifyPhoneNumber(
+                              phoneNumber: viewmodel.phoneController,
+                              verificationCompleted:
+                                  (PhoneAuthCredential credential) {},
+                              verificationFailed: (FirebaseAuthException e) {},
+                              codeSent:
+                                  (String verificationId, int? resendToken) {
+                                LoginWithNumber.verifyId = verificationId;
+                                viewmodel.navigateToVerificationView();
+                              },
+                              codeAutoRetrievalTimeout:
+                                  (String verificationId) {});
+                                  
                         },
                         child: Text(
                           "Send the code",
                         ),
                       ),
-                    )
+                    ),
                   ],
                 ),
               ),
