@@ -44,7 +44,7 @@ class Updates extends StatelessWidget {
                   ),
                 ),
                 ListTile(
-                  textColor: AppColors.whiteColor,
+                  textColor: AppColors.white,
                   leading: CircleAvatar(
                     radius: 25.0,
                     backgroundImage: AssetImage(AppImages.anas),
@@ -59,7 +59,7 @@ class Updates extends StatelessWidget {
                             child: Center(
                                 child: Icon(
                               Icons.add,
-                              color: AppColors.whiteColor,
+                              color: AppColors.white,
                               size: 20,
                             )),
                           ),

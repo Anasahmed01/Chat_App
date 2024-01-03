@@ -71,7 +71,7 @@ class CustomTextFields {
       ),
       child: TextFormField(
         style: GoogleFonts.poppins(
-            color: AppColors.whiteColor, fontWeight: FontWeight.w400),
+            color: AppColors.white, fontWeight: FontWeight.w400),
         cursorColor: AppColors.indicatorTextColor,
         textInputAction: TextInputAction.next,
         textAlign: TextAlign.start,

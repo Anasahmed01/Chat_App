@@ -54,7 +54,7 @@ class LoginWithNumber extends StatelessWidget {
                     ),
                     IntlPhoneField(
                       dropdownTextStyle:
-                          TextStyle(color: AppColors.whiteColor, fontSize: 15),
+                          TextStyle(color: AppColors.white, fontSize: 15),
                       dropdownIconPosition: IconPosition.trailing,
                       flagsButtonMargin: EdgeInsets.only(top: 5, left: 7),
                       keyboardType: TextInputType.phone,
@@ -75,7 +75,7 @@ class LoginWithNumber extends StatelessWidget {
                         counterText: '',
                         focusedBorder: OutlineInputBorder(
                           borderSide:
-                              BorderSide(color: AppColors.whiteColor, width: 2),
+                              BorderSide(color: AppColors.white, width: 2),
                           borderRadius: BorderRadius.circular(7.0),
                         ),
                         hintText: 'Phone number',
@@ -84,7 +84,7 @@ class LoginWithNumber extends StatelessWidget {
                         fillColor: AppColors.appbarColor,
                         border: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: AppColors.whiteColor,
+                            color: AppColors.white,
                           ),
                           borderRadius: BorderRadius.circular(7),
                         ),
@@ -94,7 +94,7 @@ class LoginWithNumber extends StatelessWidget {
                         print(phoneNumber);
                       },
                       initialCountryCode: 'PK',
-                      style: TextStyle(color: AppColors.whiteColor),
+                      style: TextStyle(color: AppColors.white),
                     ),
                     SizedBox(
                       height: 20,
@@ -104,7 +104,7 @@ class LoginWithNumber extends StatelessWidget {
                       height: 45,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          foregroundColor: AppColors.whiteColor,
+                          foregroundColor: AppColors.white,
                           backgroundColor: Colors.green.shade600,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
@@ -123,7 +123,9 @@ class LoginWithNumber extends StatelessWidget {
                               },
                               codeAutoRetrievalTimeout:
                                   (String verificationId) {});
-                                  
+                          viewmodel.notifyListeners();
+                          viewmodel.signIn();
+                          viewmodel.notifyListeners();
                         },
                         child: Text(
                           "Send the code",

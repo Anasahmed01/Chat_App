@@ -28,13 +28,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       theme: ThemeData(
           textTheme: Typography.whiteCupertino,
-          floatingActionButtonTheme: FloatingActionButtonThemeData(
-              foregroundColor: AppColors.whiteColor),
-          iconTheme: IconThemeData(color: AppColors.whiteColor),
+          floatingActionButtonTheme:
+              FloatingActionButtonThemeData(foregroundColor: AppColors.white),
+          iconTheme: IconThemeData(color: AppColors.white),
           scaffoldBackgroundColor: AppColors.backgroundColor,
           appBarTheme: AppBarTheme(
-            iconTheme: IconThemeData(color: AppColors.whiteColor),
-            actionsIconTheme: IconThemeData(color: AppColors.whiteColor),
+            iconTheme: IconThemeData(color: AppColors.white),
+            actionsIconTheme: IconThemeData(color: AppColors.white),
             elevation: 0,
             backgroundColor: AppColors.appbarColor,
           )),

@@ -81,7 +81,7 @@ class Verification extends StatelessWidget {
                       height: 45,
                       child: ElevatedButton(
                           style: ElevatedButton.styleFrom(
-                              foregroundColor: AppColors.whiteColor,
+                              foregroundColor: AppColors.white,
                               backgroundColor: Colors.green.shade600,
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10))),

@@ -8,13 +8,21 @@ class AuthServices {
 
   Future signInWithPhoneNumber(String phoneNumber) async {
     try {
-      var userCredential =
-          await _firebaseAuth.signInWithPhoneNumber(phoneNumber);
+      UserCredential userCredential = (await _firebaseAuth
+          .signInWithPhoneNumber(phoneNumber)) as UserCredential;
 
 // after creating user, creating a new document for the user in the user collection.
 
-//To be continue
-      _firebaseFirestore.collection('user').doc(phoneNumber);
+      _firebaseFirestore.collection('/').doc(userCredential.user!.uid).set({
+        'uid': userCredential.user!.uid,
+
+        "phoneNumber":
+            phoneNumber, //your data which will be added to the collection and collection will be created after this
+      }).then((_) {
+        print("collection created");
+      }).catchError((_) {
+        print("an error occured");
+      });
 
       return userCredential;
     } on FirebaseAuthException catch (e) {

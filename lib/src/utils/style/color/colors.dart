@@ -9,5 +9,5 @@ class AppColors {
   static Color textColor = Color.fromARGB(255, 142, 150, 158);
   static Color indicatorTextColor = Color.fromARGB(255, 15, 216, 149);
   static Color callIconColor = Colors.red;
-  static Color whiteColor = Colors.white;
+  static Color white = Colors.white;
 }

@@ -6,7 +6,7 @@ Widget homeTopIcon(icons) {
     padding: const EdgeInsets.only(left: 25.0),
     child: Icon(
       icons,
-      color: AppColors.whiteColor,
+      color: AppColors.white,
     ),
   );
 }
